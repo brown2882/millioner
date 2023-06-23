@@ -1,0 +1,27 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: grey;
+}
+.headMil{
+    margin-top:60px;
+    margin-left:35%
+}
+.quetion{
+    margin-top: 70px;
+    margin-left:45%    
+}
+.answer{
+    display:flex;
+    margin-left:45%;
+    margin-top:10px; 
+}
+#twoAnswer{
+    margin-left:15px
+}
+#fourAnwser{
+    margin-left:15px
+}
