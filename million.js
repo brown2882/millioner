@@ -1,41 +1,46 @@
-let quetion = document.querySelector('.quetion');
-let quetion_p = document.getElementById('quetion_p');
+let quetion = document.querySelector('.quetion'),
+    quetion_p = document.getElementById('quetion_p'),
+    body = document.querySelector('body');
+let one = document.getElementById('oneAnwser');
+let two = document.getElementById('twoAnswer');
+let tree = document.getElementById('treeAnwser');
+let four = document.getElementById('fourAnwser');
 
-let oneAnwser = document.getElementById('oneAnwser');
-let twoAnwser = document.getElementById('twoAnswer');
-let treeAnwser = document.getElementById('treeAnwser');
-let fourAnwser = document.getElementById('fourAnwser');
 
-answerOne();
-oneAnwser.addEventListener("click", () => {
-    answerTwo()
+let inputQuest = document.createElement('input'),
+    inputAnswear = document.createElement('input'),
+    btn = document.createElement('button');
+btn.setAttribute('id','btn');
+btn.innerHTML = 'heelo';
+
+body.appendChild(inputQuest);
+body.appendChild(btn);
+body.appendChild(inputAnswear);
+
+let questions = [];
+let answears = [];
+btn.addEventListener('click',function(){
+    let random_key = Math.floor(Math.random()*15);
+
+    questions[random_key] = inputQuest.value;
+    answears[random_key] =  inputAnswear.value;
+    console.log(questions);
+    console.log(answears);
+
+    if (questions.length > 7) {
+        quetion_p.innerText = questions[Math.floor(Math.random()*4)];
+        one.innerText = answears[Math.floor(Math.random()*4)];
+        two.innerText = answears[Math.floor(Math.random()*4)];
+        tree.innerText = answears[Math.floor(Math.random()*4)];
+        four.innerText = answears[Math.floor(Math.random()*4)];
+    }
 });
-twoAnwser.addEventListener("click", answerTwo);
-treeAnwser.addEventListener("click", answerTwo);
-fourAnwser.addEventListener("click", answerTwo);
 
-function answerOne() {
-    quetionOne()
-    oneAnwser.innerHTML = 'Gyumri';
-    twoAnwser.innerHTML = 'Erevan';
-    treeAnwser.innerHTML = 'Alaverdi';
-    fourAnwser.innerHTML = 'Vanadzor';
-    
-}
-function answerTwo() {
-    quetionTwo()
-    oneAnwser.innerHTML = '1989';
-    twoAnwser.innerHTML = '1979';
-    treeAnwser.innerHTML = '1978';
-    fourAnwser.innerHTML = '1999';
-
-}
-// oneAnwser.addEventListener("click", () => {
-//     alert('win')
-// })
-function quetionOne() {
-    quetion_p.innerHTML = 'where is he?'; 
-}
-function quetionTwo() {
-    quetion_p.innerHTML = 'when is born Araqel?';
-}
+body.addEventListener(
+    'click',
+    function (e) {
+        if (quetion_p.innerText == e.target.innerText) {
+            
+        }
+    }
+);
